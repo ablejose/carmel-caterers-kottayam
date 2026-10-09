@@ -1,0 +1,31 @@
+{
+  "slug": "carmel-caterers-kottayam",
+  "name": "Carmel Caterers",
+  "shortName": "Carmel",
+  "descriptor": "Catering Services",
+  "address": "Nalkavala, Kollad, Kottayam, Keralam 686004",
+  "area": "Kollad",
+  "city": "Kottayam",
+  "district": "Kottayam",
+  "region": "Kerala",
+  "postalCode": "686004",
+  "geo": {
+    "lat": 9.557533099999999,
+    "lng": 76.53617679999999
+  },
+  "mapsLink": "https://maps.google.com/?cid=3703272208909400170",
+  "phone": "+91 98461 13408",
+  "whatsapp": "919846113408",
+  "hours": "Open 9 am – 5 pm · all days",
+  "opens": "09:00",
+  "closes": "17:00",
+  "rating": 5,
+  "reviewCount": 3,
+  "reviews": [],
+  "gallery": [
+    "gallery/01.webp",
+    "gallery/02.webp",
+    "gallery/03.webp"
+  ],
+  "url": "https://carmel-caterers-kottayam.vercel.app"
+}
