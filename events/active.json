@@ -2,8 +2,9 @@
   "slug": "carmel-caterers-kottayam",
   "name": "Carmel Caterers",
   "shortName": "Carmel",
-  "descriptor": "Catering Services",
-  "headline": "Good food, served with heart.",
+  "descriptor": "Caterers & Events",
+  "headline": "Where every detail is delicious.",
+  "tagline": "Caterers & events in Kottayam, since 1998.",
   "address": "Nalkavala, Kollad, Kottayam, Keralam 686004",
   "area": "Kollad",
   "city": "Kottayam",
@@ -24,9 +25,62 @@
   "reviewCount": 3,
   "reviews": [],
   "gallery": [
-    "gallery/01.webp",
-    "gallery/02.webp",
-    "gallery/03.webp"
+    {
+      "src": "gallery/01.webp",
+      "caption": "Floral stage under crystal chandeliers"
+    },
+    {
+      "src": "gallery/02.webp",
+      "caption": "The couple on the floral stage"
+    },
+    {
+      "src": "gallery/03.webp",
+      "caption": "Live appam counter"
+    },
+    {
+      "src": "gallery/04.webp",
+      "caption": "Guests at the wedding feast"
+    },
+    {
+      "src": "gallery/05.webp",
+      "caption": "Dinner under hanging lights"
+    },
+    {
+      "src": "gallery/06.webp",
+      "caption": "Reception hall, set and ready"
+    },
+    {
+      "src": "gallery/07.webp",
+      "caption": "A family moment on stage"
+    },
+    {
+      "src": "gallery/08.webp",
+      "caption": "Welcome, by Carmel"
+    }
+  ],
+  "heroPoster": "hero/poster.webp",
+  "heroVideo": {
+    "src": "hero/hero.mp4",
+    "portrait": "hero/hero-portrait.mp4",
+    "posterPortrait": "hero/poster-portrait.webp"
+  },
+  "logoMark": "brand/logo-mark.webp",
+  "brandDir": "brand",
+  "ogImage": "og-image.jpg",
+  "about": [
+    {
+      "src": "about/1.webp",
+      "alt": "Grand entry of the couple through a packed reception hall"
+    },
+    {
+      "src": "about/2.webp",
+      "alt": "A Carmel chef serving guests at the table"
+    }
+  ],
+  "serviceImages": [
+    "services/1.webp",
+    "services/2.webp",
+    "services/3.webp"
   ],
   "url": "https://carmel-caterers-kottayam.vercel.app"
 }
