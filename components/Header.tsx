@@ -73,9 +73,10 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-shell items-center justify-between px-5 py-4 md:px-8">
         <Link href="/" className="flex items-center gap-3 leading-none" aria-label={`${site.fullName} home`}>
+          {/* On the white (scrolled) header a light gold mark washes out, so it's deepened there. */}
           {logoMark && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logoMark} alt="" aria-hidden className="h-9 w-9 object-contain" />
+            <img src={logoMark} alt="" aria-hidden className={cn("h-9 w-9 object-contain transition-[filter] duration-500", solid && "brightness-[.72] saturate-[1.6]")} />
           )}
           <span className="flex flex-col">
           <span className={cn("font-display text-2xl tracking-wide transition-colors", solid ? "text-espresso" : "text-ivory")}>
