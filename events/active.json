@@ -26,20 +26,16 @@
   "reviews": [],
   "gallery": [
     {
-      "src": "gallery/01.webp",
-      "caption": "Floral stage under crystal chandeliers"
-    },
-    {
       "src": "gallery/02.webp",
       "caption": "The couple on the floral stage"
     },
     {
-      "src": "gallery/03.webp",
-      "caption": "Live appam counter"
+      "src": "gallery/01.webp",
+      "caption": "Floral stage under crystal chandeliers"
     },
     {
-      "src": "gallery/04.webp",
-      "caption": "Guests at the wedding feast"
+      "src": "gallery/03.webp",
+      "caption": "Live appam counter"
     },
     {
       "src": "gallery/05.webp",
@@ -74,7 +70,7 @@
     },
     {
       "src": "about/2.webp",
-      "alt": "A Carmel chef serving guests at the table"
+      "alt": "Carmel's gold welcome-drinks counter under a festive canopy"
     }
   ],
   "serviceImages": [
