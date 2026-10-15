@@ -73,6 +73,17 @@ const slide = (e: GalleryEntry, i: number) =>
 
 export const heroSlides = (event.media.heroSlides ?? TEMPLATE_HERO_SLIDES).map(slide);
 
+/** Optional looping hero clip (replaces the slideshow), resolved against media.base. */
+const hv = event.media.heroVideo;
+export const heroVideo = hv
+  ? {
+      src: asset(hv.src),
+      portrait: hv.portrait ? asset(hv.portrait) : undefined,
+      poster: asset(event.media.heroPoster),
+      posterPortrait: hv.posterPortrait ? asset(hv.posterPortrait) : undefined,
+    }
+  : undefined;
+
 /** Optional transparent brand mark for the loader + header. */
 export const logoMark = event.media.logoMark ? asset(event.media.logoMark) : undefined;
 

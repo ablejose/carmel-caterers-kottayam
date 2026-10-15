@@ -4,7 +4,52 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { copy, heroSlides, logoMark, site, waLink } from "@/config/site";
+import { copy, heroSlides as allSlides, heroVideo, logoMark, site, waLink } from "@/config/site";
+import { cn } from "@/lib/utils";
+
+/** With a hero clip the slideshow steps aside entirely (HeroVideo brings its own poster). */
+const heroSlides = heroVideo ? [] : allSlides;
+
+/**
+ * Looping, muted hero clip. The poster (tall or wide, to match the screen) paints
+ * at once; only then is ONE video file picked and fetched, and it fades in when it
+ * actually plays. Visitors on data-saver or reduced motion keep the still.
+ */
+function HeroVideo({ v }: { v: NonNullable<typeof heroVideo> }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    if (reduce || saveData) return;
+    const tall = window.matchMedia("(orientation: portrait)").matches;
+    el.src = tall && v.portrait ? v.portrait : v.src;
+    el.play().catch(() => {});
+  }, [v]);
+
+  return (
+    <div className="absolute inset-0">
+      <picture>
+        {v.posterPortrait && <source media="(orientation: portrait)" srcSet={v.posterPortrait} />}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={v.poster} alt="" aria-hidden decoding="async" {...{ fetchpriority: "high" }} className="absolute inset-0 h-full w-full object-cover" />
+      </picture>
+      <video
+        ref={ref}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden
+        onPlaying={() => setPlaying(true)}
+        className={cn("absolute inset-0 h-full w-full object-cover transition-opacity duration-700", playing ? "opacity-100" : "opacity-0")}
+      />
+    </div>
+  );
+}
 import { t } from "@/lib/copy";
 
 /** A new slide every 2s. Each one slides in from the right, so the show always moves forward. */
@@ -94,6 +139,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-espresso">
       <div ref={mediaRef} className="absolute inset-0" style={{ willChange: "transform" }}>
+        {heroVideo && <HeroVideo v={heroVideo} />}
         {heroSlides.map((s, i) => (
           <div
             key={s.src}
@@ -122,6 +168,8 @@ export default function Hero() {
         style={{
           background:
             "radial-gradient(70% 55% at 50% 50%, rgba(20,16,12,0.5) 0%, rgba(20,16,12,0.25) 100%), radial-gradient(110% 80% at 50% 45%, rgba(20,16,12,0.2) 0%, rgba(20,16,12,0.55) 60%, rgba(20,16,12,0.85) 100%), linear-gradient(to top, rgba(20,16,12,0.92) 0%, rgba(20,16,12,0) 50%)",
+          // Event footage is usually shot in low light already; the full shade would bury it.
+          opacity: heroVideo ? 0.55 : 1,
         }}
       />
 

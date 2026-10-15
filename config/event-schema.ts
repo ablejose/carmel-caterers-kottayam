@@ -183,6 +183,12 @@ export interface EventConfig {
      * moving forward. Falls back to the template's stock hero slides when unset.
      */
     heroSlides?: GalleryEntry[];
+    /**
+     * Short looping hero clip, played muted instead of the slideshow. `src` is the
+     * wide cut (desktop); `portrait` and `posterPortrait` serve tall screens, so each
+     * visitor downloads one ~1 MB file. `heroPoster` shows until it plays.
+     */
+    heroVideo?: { src: MediaPath; portrait?: MediaPath; posterPortrait?: MediaPath };
     /** Transparent brand mark (PNG/SVG) used in the loader and header. Optional. */
     logoMark?: MediaPath;
     /** 1200x630 social share image. */

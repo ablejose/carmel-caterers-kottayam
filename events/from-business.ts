@@ -1,5 +1,5 @@
-import type { EventConfig, EventVariant, MenuPreset } from "@/config/event-schema";
-import { templateMenu, templateMenuPresets } from "@/config/template";
+import type { EventConfig, EventVariant, GalleryEntry, MenuPreset } from "@/config/event-schema";
+import { templateMenu, templateMenuPresets, templateServices } from "@/config/template";
 
 /**
  * ONE BUSINESS, AS THE SITE GENERATOR WRITES IT.
@@ -51,7 +51,20 @@ export interface BusinessInput {
   reviews?: { name: string; rating: number; quote: string }[];
 
   /** Their own photos, relative to /events/<slug>/ — e.g. "gallery/01.jpg". */
-  gallery: string[];
+  gallery: GalleryEntry[];
+
+  /**
+   * Their own brand media, when they've supplied it. Each one replaces the
+   * template stock below; paths are relative to /events/<slug>/.
+   */
+  heroPoster?: string;
+  heroVideo?: { src: string; portrait?: string; posterPortrait?: string };
+  logoMark?: string;
+  brandDir?: string;
+  ogImage?: string;
+  about?: GalleryEntry[];
+  /** Photos for the three "What we do" cards, in order. */
+  serviceImages?: string[];
 
   /** Live site origin, no trailing slash. */
   url: string;
@@ -127,15 +140,25 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     reputation: { rating: b.rating ?? 0, reviews: b.reviewCount ?? 0 },
     media: {
       base: `/events/${b.slug}`,
-      heroPoster: STOCK.heroSlides[0].src,
-      heroSlides: STOCK.heroSlides,
-      ogImage: STOCK.ogImage,
-      brandDir: STOCK.brandDir,
-      about: STOCK.about,
-      gallery: b.gallery.map((src, i) => ({ src, alt: `${b.name} — event photo ${i + 1}` })),
+      heroPoster: b.heroPoster || STOCK.heroSlides[0].src,
+      heroSlides: b.heroPoster ? [{ src: b.heroPoster, alt: `${b.name} — event` }] : STOCK.heroSlides,
+      heroVideo: b.heroVideo,
+      logoMark: b.logoMark,
+      ogImage: b.ogImage || STOCK.ogImage,
+      brandDir: b.brandDir || STOCK.brandDir,
+      about: b.about?.length ? b.about : STOCK.about,
+      gallery: b.gallery.map((g, i) =>
+        typeof g === "string" ? { src: g, alt: `${b.name} — event photo ${i + 1}` } : { alt: g.caption ?? `${b.name} — event photo ${i + 1}`, ...g }
+      ),
     },
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
-    overrides: { menu: neutralMenu, menuPresets: neutralPresets },
+    overrides: {
+      menu: neutralMenu,
+      menuPresets: neutralPresets,
+      ...(b.serviceImages?.length && {
+        services: templateServices.map((s, i) => ({ ...s, image: b.serviceImages?.[i] ?? s.image })),
+      }),
+    },
   };
 }
