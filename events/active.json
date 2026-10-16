@@ -18,6 +18,8 @@
   "mapsLink": "https://maps.google.com/?cid=3703272208909400170",
   "phone": "+91 98461 13408",
   "whatsapp": "919846113408",
+  "email": "carmelcaterers984@gmail.com",
+  "instagram": "https://www.instagram.com/carmel_caterers",
   "hours": "Open 9 am – 5 pm · all days",
   "opens": "09:00",
   "closes": "17:00",
@@ -78,5 +80,749 @@
     "services/2.webp",
     "services/3.webp"
   ],
-  "url": "https://carmel-caterers-kottayam.vercel.app"
+  "url": "https://carmel-caterers-kottayam.vercel.app",
+  "menu": [
+    {
+      "id": "welcome",
+      "title": "Welcome Drinks",
+      "items": [
+        {
+          "id": "welcome-live-juice",
+          "name": "Live Juice"
+        },
+        {
+          "id": "welcome-pineapple-lime",
+          "name": "Pineapple Lime"
+        },
+        {
+          "id": "welcome-grape-lime",
+          "name": "Grape Lime"
+        },
+        {
+          "id": "welcome-watermelon-lime",
+          "name": "Watermelon Lime"
+        },
+        {
+          "id": "welcome-mint-lime",
+          "name": "Mint Lime"
+        },
+        {
+          "id": "welcome-ginger-lime",
+          "name": "Ginger Lime"
+        },
+        {
+          "id": "welcome-orange-lime",
+          "name": "Orange Lime"
+        }
+      ]
+    },
+    {
+      "id": "juice",
+      "title": "Fresh Juice",
+      "items": [
+        {
+          "id": "juice-pineapple",
+          "name": "Pineapple"
+        },
+        {
+          "id": "juice-grape",
+          "name": "Grape"
+        },
+        {
+          "id": "juice-watermelon",
+          "name": "Watermelon"
+        },
+        {
+          "id": "juice-tender-coconut",
+          "name": "Tender Coconut"
+        },
+        {
+          "id": "juice-orange",
+          "name": "Orange"
+        },
+        {
+          "id": "juice-mojitos",
+          "name": "Mojitos"
+        },
+        {
+          "id": "juice-fruit-punch",
+          "name": "Fruit Punch"
+        },
+        {
+          "id": "juice-rose-milk",
+          "name": "Rose Milk"
+        },
+        {
+          "id": "juice-pista-milk",
+          "name": "Pista Milk"
+        }
+      ]
+    },
+    {
+      "id": "snacks",
+      "title": "Snacks",
+      "items": [
+        {
+          "id": "snacks-coin-cutlet",
+          "name": "Coin Cutlet"
+        },
+        {
+          "id": "snacks-fish-finger",
+          "name": "Fish Finger",
+          "veg": false
+        },
+        {
+          "id": "snacks-nuggets",
+          "name": "Nuggets",
+          "veg": false
+        },
+        {
+          "id": "snacks-meat-ball",
+          "name": "Meat Ball",
+          "veg": false
+        },
+        {
+          "id": "snacks-french-fries",
+          "name": "French Fries",
+          "veg": true
+        },
+        {
+          "id": "snacks-samosa",
+          "name": "Samosa"
+        }
+      ]
+    },
+    {
+      "id": "soups",
+      "title": "Soups",
+      "items": [
+        {
+          "id": "soups-clear-chicken-soup",
+          "name": "Clear Chicken Soup",
+          "veg": false
+        },
+        {
+          "id": "soups-manchow-chicken-soup",
+          "name": "Manchow Chicken Soup",
+          "veg": false
+        },
+        {
+          "id": "soups-sweetcorn-chicken-soup",
+          "name": "Sweetcorn Chicken Soup",
+          "veg": false
+        },
+        {
+          "id": "soups-hot-and-sour-chicken-soup",
+          "name": "Hot and Sour Chicken Soup",
+          "veg": false
+        },
+        {
+          "id": "soups-mixed-vegetable-soup",
+          "name": "Mixed Vegetable Soup",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "starters-hot",
+      "title": "Starters",
+      "items": [
+        {
+          "id": "starters-hot-cutlet-with-salad",
+          "name": "Cutlet with Salad"
+        },
+        {
+          "id": "starters-hot-chicken-lollipop",
+          "name": "Chicken Lollipop",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-meat-pan-roll",
+          "name": "Meat Pan Roll",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-chicken-65",
+          "name": "Chicken 65",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-coin-cutlet",
+          "name": "Coin Cutlet"
+        },
+        {
+          "id": "starters-hot-dragon-chicken",
+          "name": "Dragon Chicken",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-chicken-nuggets",
+          "name": "Chicken Nuggets",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-fish-fingers",
+          "name": "Fish Fingers",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-fish-pollichathu",
+          "name": "Fish Pollichathu",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-chicken-kabab",
+          "name": "Chicken Kabab",
+          "veg": false
+        },
+        {
+          "id": "starters-hot-tandoori-chicken",
+          "name": "Tandoori Chicken",
+          "veg": false
+        }
+      ]
+    },
+    {
+      "id": "first-course",
+      "title": "First Course",
+      "items": [
+        {
+          "id": "first-course-palappam",
+          "name": "Palappam",
+          "veg": true
+        },
+        {
+          "id": "first-course-noolappam",
+          "name": "Noolappam",
+          "veg": true
+        },
+        {
+          "id": "first-course-kallappam",
+          "name": "Kallappam",
+          "veg": true
+        },
+        {
+          "id": "first-course-sponchappam",
+          "name": "Sponchappam",
+          "veg": true
+        },
+        {
+          "id": "first-course-coin-porotta",
+          "name": "Coin Porotta",
+          "veg": true
+        },
+        {
+          "id": "first-course-pathiri",
+          "name": "Pathiri",
+          "veg": true
+        },
+        {
+          "id": "first-course-romali-rotti",
+          "name": "Romali Rotti",
+          "veg": true
+        },
+        {
+          "id": "first-course-butter-naan",
+          "name": "Butter Naan",
+          "veg": true
+        },
+        {
+          "id": "first-course-kulcha",
+          "name": "Kulcha",
+          "veg": true
+        },
+        {
+          "id": "first-course-bread-roll",
+          "name": "Bread Roll"
+        }
+      ]
+    },
+    {
+      "id": "curries",
+      "title": "Curries",
+      "items": [
+        {
+          "id": "curries-chicken-stew",
+          "name": "Chicken Stew",
+          "veg": false
+        },
+        {
+          "id": "curries-chicken-mappas",
+          "name": "Chicken Mappas",
+          "veg": false
+        },
+        {
+          "id": "curries-chicken-roast",
+          "name": "Chicken Roast",
+          "veg": false
+        },
+        {
+          "id": "curries-beef-chaps",
+          "name": "Beef Chaps",
+          "veg": false
+        },
+        {
+          "id": "curries-beef-curry",
+          "name": "Beef Curry",
+          "veg": false
+        },
+        {
+          "id": "curries-fish-molly",
+          "name": "Fish Molly",
+          "veg": false
+        },
+        {
+          "id": "curries-duck-curry",
+          "name": "Duck Curry",
+          "veg": false
+        },
+        {
+          "id": "curries-mutton-stew",
+          "name": "Mutton Stew",
+          "veg": false
+        },
+        {
+          "id": "curries-mutton-curry",
+          "name": "Mutton Curry",
+          "veg": false
+        },
+        {
+          "id": "curries-pork-vindalu",
+          "name": "Pork Vindalu",
+          "veg": false
+        },
+        {
+          "id": "curries-chilly-chicken",
+          "name": "Chilly Chicken",
+          "veg": false
+        },
+        {
+          "id": "curries-butter-chicken",
+          "name": "Butter Chicken",
+          "veg": false
+        }
+      ]
+    },
+    {
+      "id": "biriyani",
+      "title": "Biriyani & Rice",
+      "items": [
+        {
+          "id": "biriyani-chicken-biriyani",
+          "name": "Chicken Biriyani",
+          "veg": false
+        },
+        {
+          "id": "biriyani-mutton-biriyani",
+          "name": "Mutton Biriyani",
+          "veg": false
+        },
+        {
+          "id": "biriyani-fish-biriyani",
+          "name": "Fish Biriyani",
+          "veg": false
+        },
+        {
+          "id": "biriyani-beef-biriyani",
+          "name": "Beef Biriyani",
+          "veg": false
+        },
+        {
+          "id": "biriyani-raitha",
+          "name": "Raitha",
+          "veg": true
+        },
+        {
+          "id": "biriyani-lime-pickle",
+          "name": "Lime Pickle",
+          "veg": true
+        },
+        {
+          "id": "biriyani-dates-pickle",
+          "name": "Dates Pickle",
+          "veg": true
+        },
+        {
+          "id": "biriyani-veg-pulav",
+          "name": "Veg Pulav",
+          "veg": true
+        },
+        {
+          "id": "biriyani-mixed-fried-rice",
+          "name": "Mixed Fried Rice",
+          "veg": false
+        },
+        {
+          "id": "biriyani-chicken-fried-rice",
+          "name": "Chicken Fried Rice",
+          "veg": false
+        },
+        {
+          "id": "biriyani-egg-fried-rice",
+          "name": "Egg Fried Rice",
+          "veg": false
+        },
+        {
+          "id": "biriyani-ghee-rice",
+          "name": "Ghee Rice",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "meals",
+      "title": "Main Course",
+      "items": [
+        {
+          "id": "meals-meals",
+          "name": "Meals"
+        },
+        {
+          "id": "meals-rice",
+          "name": "Rice",
+          "veg": true
+        },
+        {
+          "id": "meals-fish-curry",
+          "name": "Fish Curry",
+          "veg": false
+        },
+        {
+          "id": "meals-beef-fry",
+          "name": "Beef Fry",
+          "veg": false
+        },
+        {
+          "id": "meals-erissery",
+          "name": "Erissery",
+          "veg": true
+        },
+        {
+          "id": "meals-pulissery",
+          "name": "Pulissery",
+          "veg": true
+        },
+        {
+          "id": "meals-chemmeen-mango-coconut-curry",
+          "name": "Chemmeen Mango Coconut Curry",
+          "veg": false
+        },
+        {
+          "id": "meals-thoran",
+          "name": "Thoran",
+          "veg": true
+        },
+        {
+          "id": "meals-pachadi",
+          "name": "Pachadi",
+          "veg": true
+        },
+        {
+          "id": "meals-aviyal",
+          "name": "Aviyal",
+          "veg": true
+        },
+        {
+          "id": "meals-mezhukkupuratty",
+          "name": "Mezhukkupuratty",
+          "veg": true
+        },
+        {
+          "id": "meals-achar",
+          "name": "Achar",
+          "veg": true
+        },
+        {
+          "id": "meals-mixed-pickle",
+          "name": "Mixed Pickle",
+          "veg": true
+        },
+        {
+          "id": "meals-pavakka-fry",
+          "name": "Pavakka Fry",
+          "veg": true
+        },
+        {
+          "id": "meals-fish-fry",
+          "name": "Fish Fry",
+          "veg": false
+        },
+        {
+          "id": "meals-chemmeen-podi",
+          "name": "Chemmeen Podi",
+          "veg": false
+        },
+        {
+          "id": "meals-chemmeen-padavalanga-thoran",
+          "name": "Chemmeen Padavalanga Thoran",
+          "veg": false
+        },
+        {
+          "id": "meals-chicken-chukka",
+          "name": "Chicken Chukka",
+          "veg": false
+        },
+        {
+          "id": "meals-pork-peralan-fry",
+          "name": "Pork Peralan Fry",
+          "veg": false
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "title": "Live Thattukada (Evening)",
+      "items": [
+        {
+          "id": "live-dosa",
+          "name": "Dosa",
+          "veg": true
+        },
+        {
+          "id": "live-porotta",
+          "name": "Porotta",
+          "veg": true
+        },
+        {
+          "id": "live-coin-porotta",
+          "name": "Coin Porotta",
+          "veg": true
+        },
+        {
+          "id": "live-nool-porotta",
+          "name": "Nool Porotta",
+          "veg": true
+        },
+        {
+          "id": "live-bun-porotta",
+          "name": "Bun Porotta",
+          "veg": true
+        },
+        {
+          "id": "live-puttu",
+          "name": "Puttu",
+          "veg": true
+        },
+        {
+          "id": "live-omelette",
+          "name": "Omelette",
+          "veg": false
+        },
+        {
+          "id": "live-chicken-kabab",
+          "name": "Chicken Kabab",
+          "veg": false
+        },
+        {
+          "id": "live-romali-rotti",
+          "name": "Romali Rotti",
+          "veg": true
+        },
+        {
+          "id": "live-appam",
+          "name": "Appam",
+          "veg": true
+        },
+        {
+          "id": "live-kappa-and-fish-curry",
+          "name": "Kappa & Fish Curry",
+          "veg": false
+        },
+        {
+          "id": "live-pal-kappa",
+          "name": "Pal Kappa"
+        },
+        {
+          "id": "live-butter-naan",
+          "name": "Butter Naan",
+          "veg": true
+        },
+        {
+          "id": "live-bhatura",
+          "name": "Bhatura",
+          "veg": true
+        },
+        {
+          "id": "live-channa-masala",
+          "name": "Channa Masala",
+          "veg": true
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "title": "Desserts",
+      "items": [
+        {
+          "id": "desserts-ice-cream-scoops",
+          "name": "Ice Cream Scoops"
+        },
+        {
+          "id": "desserts-gulab-jamun",
+          "name": "Gulab Jamun"
+        },
+        {
+          "id": "desserts-black-forest",
+          "name": "Black Forest"
+        },
+        {
+          "id": "desserts-brownie",
+          "name": "Brownie"
+        },
+        {
+          "id": "desserts-jalebi",
+          "name": "Jalebi"
+        },
+        {
+          "id": "desserts-tender-coconut-pudding",
+          "name": "Tender Coconut Pudding"
+        },
+        {
+          "id": "desserts-mixed-fruit-pudding",
+          "name": "Mixed Fruit Pudding"
+        },
+        {
+          "id": "desserts-mango-pudding",
+          "name": "Mango Pudding",
+          "note": "Seasonal"
+        },
+        {
+          "id": "desserts-blueberry-cheesecake-pudding",
+          "name": "Blueberry Cheesecake Pudding"
+        },
+        {
+          "id": "desserts-caramel-pudding",
+          "name": "Caramel Pudding"
+        },
+        {
+          "id": "desserts-tiramisu-pudding",
+          "name": "Tiramisu Pudding"
+        },
+        {
+          "id": "desserts-royal-dutch-layer-pudding",
+          "name": "Royal Dutch Layer Pudding"
+        },
+        {
+          "id": "desserts-apple-crumble-pudding",
+          "name": "Apple Crumble Pudding"
+        },
+        {
+          "id": "desserts-banoffee-pudding",
+          "name": "Banoffee Pudding"
+        },
+        {
+          "id": "desserts-fruit-salad",
+          "name": "Fruit Salad"
+        },
+        {
+          "id": "desserts-cassata",
+          "name": "Cassata"
+        },
+        {
+          "id": "desserts-red-velvet-ice-cream",
+          "name": "Red Velvet Ice Cream"
+        },
+        {
+          "id": "desserts-fundae",
+          "name": "Fundae"
+        },
+        {
+          "id": "desserts-large-cup-ice-cream",
+          "name": "Large Cup Ice Cream"
+        },
+        {
+          "id": "desserts-small-cup-ice-cream",
+          "name": "Small Cup Ice Cream"
+        }
+      ]
+    },
+    {
+      "id": "add-ons",
+      "title": "Add-ons",
+      "items": [
+        {
+          "id": "add-ons-salad-counter",
+          "name": "Salad Counter"
+        },
+        {
+          "id": "add-ons-pani-puri-counter",
+          "name": "Pani Puri Counter"
+        },
+        {
+          "id": "add-ons-cotton-candy",
+          "name": "Cotton Candy"
+        },
+        {
+          "id": "add-ons-chocolate-fountain",
+          "name": "Chocolate Fountain"
+        },
+        {
+          "id": "add-ons-popcorn",
+          "name": "Popcorn"
+        },
+        {
+          "id": "add-ons-tea-counter",
+          "name": "Tea Counter"
+        },
+        {
+          "id": "add-ons-mineral-water",
+          "name": "Mineral Water",
+          "note": "300 ml"
+        }
+      ]
+    }
+  ],
+  "menuPresets": [
+    {
+      "title": "Kottayam Wedding Feast",
+      "note": "Appam, stew, roasts and pudding",
+      "items": [
+        "welcome-pineapple-lime",
+        "starters-hot-cutlet-with-salad",
+        "first-course-palappam",
+        "curries-chicken-stew",
+        "curries-duck-curry",
+        "curries-beef-curry",
+        "curries-fish-molly",
+        "biriyani-ghee-rice",
+        "desserts-tender-coconut-pudding",
+        "desserts-ice-cream-scoops"
+      ]
+    },
+    {
+      "title": "Biriyani Reception",
+      "note": "Starters, biriyani and dessert",
+      "items": [
+        "welcome-watermelon-lime",
+        "starters-hot-chicken-65",
+        "curries-chilly-chicken",
+        "biriyani-chicken-biriyani",
+        "biriyani-raitha",
+        "biriyani-lime-pickle",
+        "biriyani-dates-pickle",
+        "desserts-caramel-pudding",
+        "desserts-ice-cream-scoops"
+      ]
+    },
+    {
+      "title": "Kerala Meals",
+      "note": "Rice with curries, thorans and fries",
+      "items": [
+        "meals-meals",
+        "meals-rice",
+        "meals-fish-curry",
+        "meals-beef-fry",
+        "meals-erissery",
+        "meals-pulissery",
+        "meals-thoran",
+        "meals-pachadi",
+        "meals-aviyal",
+        "meals-mezhukkupuratty",
+        "meals-achar",
+        "meals-pavakka-fry",
+        "meals-fish-fry",
+        "meals-chemmeen-podi"
+      ]
+    }
+  ]
 }
