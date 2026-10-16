@@ -1,4 +1,4 @@
-import type { EventConfig, EventVariant, GalleryEntry, MenuPreset } from "@/config/event-schema";
+import type { EventConfig, EventVariant, GalleryEntry, MenuCategory, MenuPreset } from "@/config/event-schema";
 import { templateMenu, templateMenuPresets, templateServices } from "@/config/template";
 
 /**
@@ -65,6 +65,11 @@ export interface BusinessInput {
   about?: GalleryEntry[];
   /** Photos for the three "What we do" cards, in order. */
   serviceImages?: string[];
+
+  /** Their own menu card for the quote builder; replaces the shared Kerala wedding menu. */
+  menu?: MenuCategory[];
+  /** "Start from a classic" picks, using ids from their `menu`. */
+  menuPresets?: MenuPreset[];
 
   /** Live site origin, no trailing slash. */
   url: string;
@@ -154,8 +159,8 @@ export function fromBusiness(b: BusinessInput): EventConfig {
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
     seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
     overrides: {
-      menu: neutralMenu,
-      menuPresets: neutralPresets,
+      menu: b.menu?.length ? b.menu : neutralMenu,
+      menuPresets: b.menu?.length ? b.menuPresets ?? [] : neutralPresets,
       ...(b.serviceImages?.length && {
         services: templateServices.map((s, i) => ({ ...s, image: b.serviceImages?.[i] ?? s.image })),
       }),

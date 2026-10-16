@@ -6,7 +6,10 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
+  ChefHat,
+  Citrus,
   Cookie,
+  CookingPot,
   Drumstick,
   Flame,
   GlassWater,
@@ -14,7 +17,9 @@ import {
   Leaf,
   Minus,
   Plus,
+  Popcorn,
   Salad,
+  Soup,
   Sparkles,
   Trash2,
   UtensilsCrossed,
@@ -40,7 +45,7 @@ const GUESTS = { min: 50, max: 2000, step: 25, initial: 300 };
 const GUEST_TICKS = [50, 500, 1000, 1500, 2000];
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/** Course icons for the shared menu ids; anything else gets the cutlery icon. */
+/** Course icons for the shared menu ids (and common per-event ones); anything else gets the cutlery icon. */
 const COURSE_ICONS: Record<string, LucideIcon> = {
   welcome: GlassWater,
   starters: Cookie,
@@ -50,7 +55,19 @@ const COURSE_ICONS: Record<string, LucideIcon> = {
   "veg-mains": Salad,
   desserts: IceCreamBowl,
   live: Flame,
+  juice: Citrus,
+  snacks: Cookie,
+  soups: Soup,
+  "starters-hot": Drumstick,
+  "first-course": Wheat,
+  curries: CookingPot,
+  biriyani: ChefHat,
+  meals: Leaf,
+  "add-ons": Popcorn,
 };
+
+/** Desktop course grid: one row up to 8 courses, otherwise two even rows. */
+const RAIL_COLS = menu.length <= 8 ? menu.length : Math.ceil(menu.length / 2);
 const iconFor = (id: string) => COURSE_ICONS[id] ?? UtensilsCrossed;
 
 const c = copy.menu;
@@ -286,7 +303,8 @@ export default function Menu() {
             role="tablist"
             aria-label="Menu courses"
             data-lenis-prevent
-            className="flex snap-x gap-2 overflow-x-auto [scrollbar-width:none] lg:grid lg:grid-cols-8 lg:gap-3 lg:overflow-visible lg:pt-1 [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x gap-2 overflow-x-auto [scrollbar-width:none] lg:grid lg:gap-3 lg:overflow-visible lg:pt-1 [&::-webkit-scrollbar]:hidden"
+            style={{ gridTemplateColumns: `repeat(${RAIL_COLS}, minmax(0, 1fr))` }}
           >
             {menu.map((m, i) => {
               const on = i === catIdx;
