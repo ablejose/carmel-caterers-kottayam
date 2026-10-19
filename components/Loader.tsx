@@ -45,6 +45,8 @@ export default function Loader() {
 
   const revealing = phase === "reveal";
   const letters = Array.from(site.name);
+  // brand.loader "mark": a black screen with only the logo mark and its ring — no name, no glow.
+  const markOnly = site.loader === "mark" && !!logoMark;
 
   return (
     <div className={`fixed inset-0 z-[300] ${revealing ? "pointer-events-none" : ""}`}>
@@ -52,7 +54,7 @@ export default function Loader() {
       {(["top", "bottom"] as const).map((side) => (
         <motion.div
           key={side}
-          className={`absolute inset-x-0 ${side === "top" ? "top-0" : "bottom-0"} h-1/2 bg-espresso`}
+          className={`absolute inset-x-0 ${side === "top" ? "top-0" : "bottom-0"} h-1/2 ${markOnly ? "bg-black" : "bg-espresso"}`}
           initial={false}
           animate={revealing ? { y: side === "top" ? "-100%" : "100%" } : { y: "0%" }}
           transition={{ duration: reduce ? 0.3 : 1.05, delay: reduce ? 0 : 0.42, ease: CURTAIN }}
@@ -72,7 +74,7 @@ export default function Loader() {
       {/* Warm glow */}
       <motion.div
         aria-hidden
-        className="absolute inset-0"
+        className={markOnly ? "hidden" : "absolute inset-0"}
         style={{ background: "radial-gradient(60% 50% at 50% 50%, rgba(196,137,46,0.16) 0%, rgba(196,137,46,0) 70%)" }}
         animate={{ opacity: revealing ? 0 : 1 }}
         transition={{ duration: 0.4 }}
@@ -86,9 +88,13 @@ export default function Loader() {
         transition={{ duration: 0.4, ease: EASE }}
       >
         {/* Ring + mark */}
-        <div className="relative grid h-28 w-28 place-items-center md:h-32 md:w-32">
+        <div className={markOnly ? "relative grid h-40 w-40 place-items-center md:h-48 md:w-48" : "relative grid h-28 w-28 place-items-center md:h-32 md:w-32"}>
           <svg viewBox="0 0 120 120" className="absolute inset-0 h-full w-full -rotate-90" aria-hidden>
             <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(196,137,46,0.18)" strokeWidth="1" />
+            {markOnly ? (
+              // Logo-only intro runs on CSS (globals.css), so it plays from first paint, before scripts load.
+              <circle cx="60" cy="60" r="56" fill="none" stroke="var(--saffron)" strokeWidth="1.4" strokeLinecap="round" pathLength={1} className="loader-ring" />
+            ) : (
             <motion.circle
               cx="60"
               cy="60"
@@ -101,8 +107,12 @@ export default function Loader() {
               animate={{ pathLength: 1 }}
               transition={{ duration: reduce ? 0 : 1.6, ease: [0.65, 0, 0.35, 1] }}
             />
+            )}
           </svg>
-          {logoMark ? (
+          {markOnly ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={logoMark} alt="" className="loader-mark h-[58%] w-[58%] object-contain" />
+          ) : logoMark ? (
             <motion.img
               src={logoMark}
               alt=""
@@ -124,6 +134,8 @@ export default function Loader() {
           )}
         </div>
 
+        {!markOnly && (
+        <>
         {/* Name, letter by letter */}
         {/* Words wrap as whole words on long names; letters within each word still rise one by one. */}
         <p className="mt-8 flex max-w-[92vw] flex-wrap justify-center gap-x-[0.3em]" aria-hidden>
@@ -167,6 +179,8 @@ export default function Loader() {
             transition={{ duration: reduce ? 0 : HOLD_MS / 1000 - 0.2, ease: [0.45, 0, 0.2, 1] }}
           />
         </span>
+        </>
+        )}
       </motion.div>
     </div>
   );
