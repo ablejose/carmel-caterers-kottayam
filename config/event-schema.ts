@@ -96,6 +96,13 @@ export interface EventConfig {
     headline?: string;
     /** Optional Malayalam line shown under the headline/tagline in the hero. */
     taglineMl?: string;
+    /**
+     * Set the name like the client's logo lettering instead of the template serif:
+     * uppercase geometric sans, wide tracking, and optionally their stemless three-bar "E".
+     */
+    wordmark?: { barE?: boolean };
+    /** "mark": the intro is a black screen with only the logo mark and its drawn ring. */
+    loader?: "mark";
   };
 
   contact: {

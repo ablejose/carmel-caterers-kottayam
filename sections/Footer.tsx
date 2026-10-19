@@ -1,6 +1,7 @@
 import { Phone, MapPin, Clock, Instagram, Facebook, Mail, Navigation } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import BrandName from "@/components/ui/BrandName";
 import { copy, logoMark, site, telLink, waLink } from "@/config/site";
 import { t } from "@/lib/copy";
 
@@ -94,7 +95,9 @@ export default function Footer() {
                 <img src={logoMark} alt="" aria-hidden className="h-10 w-10 object-contain" />
               )}
               <div>
-                <p className="font-display text-2xl leading-none">{site.name}</p>
+                <p className={`font-display leading-none ${site.wordmark ? "text-[1.3rem]" : "text-2xl"}`}>
+                  <BrandName />
+                </p>
                 <p className="mt-1 font-sans text-[0.62rem] uppercase tracking-[0.26em] text-saffron">{site.kicker}</p>
               </div>
             </div>

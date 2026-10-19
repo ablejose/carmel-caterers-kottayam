@@ -23,6 +23,9 @@ export interface BusinessInput {
   /** Their own hero line; without it every site shares the template's. */
   headline?: string;
   tagline?: string;
+  /** Letter the name like their logo, and/or use the logo-only black intro (see EventConfig.brand). */
+  wordmark?: { barE?: boolean };
+  loader?: "mark";
 
   address: string;
   street?: string;
@@ -121,6 +124,8 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       kicker: descriptor,
       tagline: b.tagline || "Weddings & events, catered with care.",
       headline: b.headline || "Unforgettable feasts. Flawless celebrations.",
+      wordmark: b.wordmark,
+      loader: b.loader,
     },
     contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
     location: {

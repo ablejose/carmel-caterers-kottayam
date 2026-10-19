@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Manrope, Montserrat } from "next/font/google";
 import "./globals.css";
 import { brandAssets, copy, icon, site } from "@/config/site";
 import { event } from "@/event.config";
@@ -15,6 +15,8 @@ import Loader from "@/components/Loader";
  */
 const fraunces = Fraunces({ subsets: ["latin"], display: "swap", variable: "--font-fraunces" });
 const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
+// Logo-style name lettering (brand.wordmark). Browsers only fetch it on sites that use it.
+const wordmarkFont = Montserrat({ subsets: ["latin"], weight: "500", display: "swap", variable: "--font-wordmark" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -93,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     : undefined;
 
   return (
-    <html lang={seo.lang} className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang={seo.lang} className={`${fraunces.variable} ${manrope.variable} ${wordmarkFont.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>

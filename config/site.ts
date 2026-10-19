@@ -34,6 +34,9 @@ export const site = {
   headline: event.brand.headline ?? event.brand.tagline,
   /** Optional Malayalam line under the tagline/headline. */
   taglineMl: event.brand.taglineMl,
+  /** Logo-style lettering for the name (see components/ui/BrandName.tsx). */
+  wordmark: event.brand.wordmark,
+  loader: event.brand.loader,
   city: `${event.location.city}, ${event.location.region}`,
   district: event.location.district,
   region: event.location.region,

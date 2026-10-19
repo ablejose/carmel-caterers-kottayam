@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import BrandName from "@/components/ui/BrandName";
 import { copy, heroSlides as allSlides, heroVideo, logoMark, site, waLink } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -185,12 +186,15 @@ export default function Hero() {
           <span
             className="display-xl text-ivory"
             style={{
-              // Long names (generated sites) step down so they stay on one or two lines.
-              fontSize: site.name.length > 18 ? "clamp(2.2rem, 5.5vw, 4.4rem)" : site.name.length > 10 ? "clamp(2.8rem, 7vw, 5.6rem)" : "clamp(3.4rem, 9vw, 7rem)",
+              // Long names (generated sites) step down so they stay on one or two lines;
+              // the widely tracked logo lettering steps down too, to stay on one line on phones.
+              fontSize: site.wordmark
+                ? "clamp(2.5rem, 7.5vw, 5.25rem)"
+                : site.name.length > 18 ? "clamp(2.2rem, 5.5vw, 4.4rem)" : site.name.length > 10 ? "clamp(2.8rem, 7vw, 5.6rem)" : "clamp(3.4rem, 9vw, 7rem)",
               textShadow: "0 4px 40px rgba(0,0,0,0.35)",
             }}
           >
-            {site.name}
+            <BrandName />
           </span>
           <span
             className="mt-2 font-sans text-[0.78rem] font-semibold uppercase md:text-sm"
