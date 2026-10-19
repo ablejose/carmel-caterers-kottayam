@@ -5,6 +5,10 @@
   "descriptor": "Caterers & Events",
   "headline": "Where every detail is delicious.",
   "tagline": "Caterers & events in Kottayam, since 1998.",
+  "wordmark": {
+    "barE": true
+  },
+  "loader": "mark",
   "address": "Nalkavala, Kollad, Kottayam, Keralam 686004",
   "area": "Kollad",
   "city": "Kottayam",
