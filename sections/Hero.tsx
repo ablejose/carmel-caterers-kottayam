@@ -195,7 +195,8 @@ export default function Hero() {
             }}
           >
             <BrandName />
-          </span>
+          </span>{" "}
+          {/* ^ keeps "Name Descriptor" as two words in the heading's text (flex hides the space). */}
           <span
             className="mt-2 font-sans text-[0.78rem] font-semibold uppercase md:text-sm"
             style={{ letterSpacing: "0.42em", paddingLeft: "0.42em", color: "#F1D9A6", textShadow: "0 1px 16px rgba(0,0,0,0.6)" }}
