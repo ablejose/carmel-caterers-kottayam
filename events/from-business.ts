@@ -74,6 +74,16 @@ export interface BusinessInput {
   /** "Start from a classic" picks, using ids from their `menu`. */
   menuPresets?: MenuPreset[];
 
+  /** Their own search copy and Search Console / Bing verification codes; anything left out is generated. */
+  seo?: {
+    title?: string;
+    description?: string;
+    ogDescription?: string;
+    keywords?: string[];
+    googleSiteVerification?: string;
+    bingSiteVerification?: string;
+  };
+
   /** Live site origin, no trailing slash. */
   url: string;
 }
@@ -162,7 +172,10 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       ),
     },
     reviews: (b.reviews ?? []).map((r) => ({ ...r, source: "Google review" })),
-    seo: { keywords: uniq([b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]) },
+    seo: {
+      ...b.seo,
+      keywords: uniq([...(b.seo?.keywords ?? []), b.name, b.shortName, `${b.shortName || b.name} ${b.city}`]),
+    },
     overrides: {
       menu: b.menu?.length ? b.menu : neutralMenu,
       menuPresets: b.menu?.length ? b.menuPresets ?? [] : neutralPresets,

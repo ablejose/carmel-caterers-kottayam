@@ -214,8 +214,16 @@ export interface EventConfig {
   seo?: {
     /** Extra keywords on top of the generated ones. */
     keywords?: string[];
-    /** Overrides the generated meta description. */
+    /** Overrides the generated meta description. {tokens} are filled. */
     description?: string;
+    /** Overrides the generated page title. {tokens} are filled. */
+    title?: string;
+    /** Overrides the generated Open Graph / Twitter description. {tokens} are filled. */
+    ogDescription?: string;
+    /** Google Search Console HTML-tag code (the `content` value only). NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION wins when set. */
+    googleSiteVerification?: string;
+    /** Bing Webmaster Tools `msvalidate.01` code. NEXT_PUBLIC_BING_SITE_VERIFICATION wins when set. */
+    bingSiteVerification?: string;
   };
 
   /**

@@ -31,7 +31,8 @@ export const metadata: Metadata = {
   creator: site.fullName,
   publisher: site.fullName,
   category: seo.category,
-  alternates: { canonical: "/" },
+  // Single English (India) page: canonical + hreflang en-IN, with x-default for everyone else.
+  alternates: { canonical: "/", languages: { "en-IN": "/", "x-default": "/" } },
   formatDetection: { telephone: true, address: true, email: false },
   openGraph: {
     type: "website",
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
     siteName: site.fullName,
     title: seo.title,
     description: seo.ogDescription,
-    images: [{ url: brandAssets.ogImage, width: 1200, height: 630, alt: seo.title }],
+    images: [{ url: brandAssets.ogImage, width: 1200, height: 630, alt: seo.title, type: "image/jpeg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: seo.title,
     description: seo.ogDescription,
-    images: [brandAssets.ogImage],
+    images: [{ url: brandAssets.ogImage, alt: seo.title }],
   },
   icons: {
     icon: [
@@ -77,9 +78,25 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  // Search Console / Bing HTML-tag codes: env var or events/active.json `seo` (config/seo.ts).
+  verification:
+    seo.googleVerification || seo.bingVerification
+      ? {
+          google: seo.googleVerification,
+          other: seo.bingVerification ? { "msvalidate.01": seo.bingVerification } : undefined,
+        }
+      : undefined,
+  // Local-search hints: state, town and map position.
+  other: {
+    ...(event.location.region === "Kerala" ? { "geo.region": "IN-KL" } : {}),
+    "geo.placename": event.location.city,
+    ...(event.location.geo
+      ? {
+          "geo.position": `${event.location.geo.lat};${event.location.geo.lng}`,
+          ICBM: `${event.location.geo.lat}, ${event.location.geo.lng}`,
+        }
+      : {}),
+  },
 };
 
 export const viewport: Viewport = {
