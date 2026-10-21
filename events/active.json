@@ -10,6 +10,7 @@
   },
   "loader": "mark",
   "address": "Nalkavala, Kollad, Kottayam, Keralam 686004",
+  "street": "Nalkavala, Kollad",
   "area": "Kollad",
   "city": "Kottayam",
   "district": "Kottayam",
@@ -84,6 +85,34 @@
     "services/2.webp",
     "services/3.webp"
   ],
+  "seo": {
+    "title": "Carmel Caterers & Events | Wedding Catering in Kottayam",
+    "description": "Wedding catering, buffets, live counters and event management in Kottayam since 1998 — appam & stew, biriyani and Kerala meals. Rated {rating} on Google.",
+    "ogDescription": "Where every detail is delicious. Carmel Caterers & Events, Kottayam — wedding catering, live counters and event management since 1998.",
+    "keywords": [
+      "caterers in Kottayam",
+      "catering Kottayam",
+      "wedding catering Kottayam",
+      "catering services Kottayam",
+      "best caterers Kottayam",
+      "wedding caterers Kottayam",
+      "event management Kottayam",
+      "outdoor catering Kottayam",
+      "buffet catering Kottayam",
+      "live counter catering Kottayam",
+      "thattukada catering Kottayam",
+      "biriyani catering Kottayam",
+      "Kerala wedding catering",
+      "appam and stew catering",
+      "catering Kollad",
+      "caterers near Kollad Kottayam",
+      "Carmel Caterers",
+      "Carmel Caterers Kottayam",
+      "Carmel Caterers and Events"
+    ],
+    "googleSiteVerification": "",
+    "bingSiteVerification": ""
+  },
   "url": "https://carmel-caterers-kottayam.vercel.app",
   "menu": [
     {
