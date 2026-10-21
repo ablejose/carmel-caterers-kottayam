@@ -7,10 +7,13 @@ import { site } from "@/config/site";
  * in-page anchors, not separate routes). Submit https://<domain>/sitemap.xml
  * in Google Search Console.
  */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: site.url,
+      url: `${site.url}/`,
+      // Build time: every deploy is a fresh export of the whole page.
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
