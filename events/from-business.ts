@@ -38,6 +38,8 @@ export interface BusinessInput {
   mapsLink: string;
 
   phone: string;
+  /** Second call number shown beside `phone` in the contact list (WhatsApp stays on `whatsapp`). */
+  phoneAlt?: string;
   /** wa.me digits, e.g. "919847348699". */
   whatsapp: string;
   email?: string;
@@ -137,7 +139,7 @@ export function fromBusiness(b: BusinessInput): EventConfig {
       wordmark: b.wordmark,
       loader: b.loader,
     },
-    contact: { phone: b.phone, whatsapp: b.whatsapp, email: b.email || undefined },
+    contact: { phone: b.phone, phoneAlt: b.phoneAlt || undefined, whatsapp: b.whatsapp, email: b.email || undefined },
     location: {
       city: b.city,
       district,
